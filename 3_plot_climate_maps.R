@@ -49,7 +49,10 @@ make_plot <- function(data,var,breaks, transfun, rev, title, ftitle, pal) {
     annotation_north_arrow(location = "tr", which_north = "true",
                            style = north_arrow_fancy_orienteering) +
     coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
-    labs(title = title, fill=ftitle) +
+    labs(title = title, fill = ftitle) +
+    theme(plot.title = element_text(size=20, face="bold"),
+          legend.title = element_text(size=14),
+          legend.text = element_text(size=14)) +
     scale_fill_gradientn(colours = colours, trans = transfun,
                          breaks = breaks, labels = breaks)
   

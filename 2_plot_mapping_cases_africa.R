@@ -41,8 +41,10 @@ p1 <- ggplot(data = conf.africa) +
   annotation_north_arrow(location = "tr", which_north = "true",
                          style = north_arrow_fancy_orienteering) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
-  labs(title = "June 30, 2020", fill="") +
+  labs(title = "a) June 30, 2020", fill="") +
   theme(legend.position = c(0.12, legend.y), 
+        plot.title = element_text(size = 20, face = "bold"),  
+        legend.text = element_text(size=14),        
         legend.background = element_rect(fill="lightgrey"),
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
@@ -56,8 +58,10 @@ p2 <- ggplot(data = conf.africa) +
   annotation_north_arrow(location = "tr", which_north = "true",
                          style = north_arrow_fancy_orienteering) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
-  labs(title = "December 31, 2020",fill="") +
+  labs(title = "b) December 31, 2020",fill="") +
   theme(legend.position = c(0.12, legend.y), 
+        plot.title = element_text(size = 20, face = "bold"), 
+        legend.text = element_text(size=14),        
         legend.background = element_rect(fill="lightgrey"),
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
@@ -70,8 +74,10 @@ p3 <- ggplot(data = conf.africa) +
   annotation_north_arrow(location = "tr", which_north = "true",
                          style = north_arrow_fancy_orienteering) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
-  labs(title = "June 30, 2021",fill="") +
+  labs(title = "c) June 30, 2021",fill="") +
   theme(legend.position = c(0.12, legend.y), 
+        plot.title = element_text(size = 20, face = "bold"),  
+        legend.text = element_text(size=14),        
         legend.background = element_rect(fill="lightgrey"),
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
@@ -84,8 +90,10 @@ p4 <- ggplot(data = conf.africa) +
   annotation_north_arrow(location = "tr", which_north = "true",
                          style = north_arrow_fancy_orienteering) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
-  labs(title = "December 31, 2021",fill="") +
+  labs(title = "d) December 31, 2021",fill="") +
   theme(legend.position = c(0.12, legend.y), 
+        plot.title = element_text(size = 20, face = "bold"),    
+        legend.text = element_text(size=14),        
         legend.background = element_rect(fill="lightgrey"),
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
@@ -98,8 +106,10 @@ p5 <- ggplot(data = conf.africa) +
   annotation_north_arrow(location = "tr", which_north = "true",
                          style = north_arrow_fancy_orienteering) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
-  labs(title = "June 30, 2022",fill="") +
-  theme(legend.position = c(0.12, legend.y), 
+  labs(title = "e) June 30, 2022",fill="") +
+  theme(legend.position = c(0.12, legend.y),
+        plot.title = element_text(size = 20, face = "bold"),  
+        legend.text = element_text(size=14),        
         legend.background = element_rect(fill="lightgrey"),
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
@@ -112,8 +122,10 @@ p6 <- ggplot(data = conf.africa) +
   annotation_north_arrow(location = "tr", which_north = "true",
                          style = north_arrow_fancy_orienteering) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
-  labs(title = "September 30, 2022",fill="") +
+  labs(title = "f) September 30, 2022",fill="") +
   theme(legend.position = c(0.12, legend.y), 
+        plot.title = element_text(size = 20, face = "bold"),
+        legend.text = element_text(size=14),
         legend.background = element_rect(fill="lightgrey"),
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
@@ -122,5 +134,5 @@ grob.cases <- grid.arrange(p1, p2, p3, p4, p5, p6, nrow = 2)
 ggsave(filename = "graph/cloropleth_cases.png", grob.cases, dpi = 500, scale = 1.85,
        width = 25, height = 15, units = "cm")
 
-dev.off()
+#dev.off()
 print("finished")
