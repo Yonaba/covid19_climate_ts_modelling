@@ -29,6 +29,9 @@ conf.africa <- merge(world, df.conf, by = "iso_a3")
 
 #dev.off()
 
+AXIS_FONT_SZ <- 12
+PLOT_TITLE_FONT_SZ <- 20
+LEGEND_TEXT_FONT_SZ <- 14
 breaks.conf <- c(1,100,10000,500000)
 legend.y <- 0.3
 
@@ -43,8 +46,9 @@ p1 <- ggplot(data = conf.africa) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
   labs(title = "a) June 30, 2020", fill="") +
   theme(legend.position = c(0.12, legend.y), 
-        plot.title = element_text(size = 20, face = "bold"),  
-        legend.text = element_text(size=14),        
+        plot.title = element_text(size = PLOT_TITLE_FONT_SZ, face = "bold"),
+        axis.text = element_text(size = AXIS_FONT_SZ),
+        legend.text = element_text(size=LEGEND_TEXT_FONT_SZ),        
         legend.background = element_rect(fill="lightgrey"),
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
@@ -60,9 +64,9 @@ p2 <- ggplot(data = conf.africa) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
   labs(title = "b) December 31, 2020",fill="") +
   theme(legend.position = c(0.12, legend.y), 
-        plot.title = element_text(size = 20, face = "bold"), 
-        legend.text = element_text(size=14),        
-        legend.background = element_rect(fill="lightgrey"),
+        plot.title = element_text(size = PLOT_TITLE_FONT_SZ, face = "bold"),
+        axis.text = element_text(size = AXIS_FONT_SZ),
+        legend.text = element_text(size=LEGEND_TEXT_FONT_SZ),     
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
 p3 <- ggplot(data = conf.africa) +
@@ -76,9 +80,9 @@ p3 <- ggplot(data = conf.africa) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
   labs(title = "c) June 30, 2021",fill="") +
   theme(legend.position = c(0.12, legend.y), 
-        plot.title = element_text(size = 20, face = "bold"),  
-        legend.text = element_text(size=14),        
-        legend.background = element_rect(fill="lightgrey"),
+        plot.title = element_text(size = PLOT_TITLE_FONT_SZ, face = "bold"),
+        axis.text = element_text(size = AXIS_FONT_SZ),
+        legend.text = element_text(size=LEGEND_TEXT_FONT_SZ),     
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
 p4 <- ggplot(data = conf.africa) +
@@ -92,9 +96,9 @@ p4 <- ggplot(data = conf.africa) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
   labs(title = "d) December 31, 2021",fill="") +
   theme(legend.position = c(0.12, legend.y), 
-        plot.title = element_text(size = 20, face = "bold"),    
-        legend.text = element_text(size=14),        
-        legend.background = element_rect(fill="lightgrey"),
+        plot.title = element_text(size = PLOT_TITLE_FONT_SZ, face = "bold"),
+        axis.text = element_text(size = AXIS_FONT_SZ),
+        legend.text = element_text(size=LEGEND_TEXT_FONT_SZ),     
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
 p5 <- ggplot(data = conf.africa) +
@@ -108,9 +112,9 @@ p5 <- ggplot(data = conf.africa) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
   labs(title = "e) June 30, 2022",fill="") +
   theme(legend.position = c(0.12, legend.y),
-        plot.title = element_text(size = 20, face = "bold"),  
-        legend.text = element_text(size=14),        
-        legend.background = element_rect(fill="lightgrey"),
+        plot.title = element_text(size = PLOT_TITLE_FONT_SZ, face = "bold"),
+        axis.text = element_text(size = AXIS_FONT_SZ),
+        legend.text = element_text(size=LEGEND_TEXT_FONT_SZ),     
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
 p6 <- ggplot(data = conf.africa) +
@@ -124,9 +128,9 @@ p6 <- ggplot(data = conf.africa) +
   coord_sf(xlim = c(-20, 52), ylim = c(-35,35)) +
   labs(title = "f) September 30, 2022",fill="") +
   theme(legend.position = c(0.12, legend.y), 
-        plot.title = element_text(size = 20, face = "bold"),
-        legend.text = element_text(size=14),
-        legend.background = element_rect(fill="lightgrey"),
+        plot.title = element_text(size = PLOT_TITLE_FONT_SZ, face = "bold"),
+        axis.text = element_text(size = AXIS_FONT_SZ),
+        legend.text = element_text(size=LEGEND_TEXT_FONT_SZ),     
         plot.margin=unit(c(0.1,0.1,0.1,0.1), "cm"))
 
 grob.cases <- grid.arrange(p1, p2, p3, p4, p5, p6, nrow = 2)
